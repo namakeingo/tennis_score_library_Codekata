@@ -11,41 +11,37 @@ namespace ClassLibrary
         {
             string result = "";
 
-            if (ScoreOne == 40 && ScoreTwo == 40
-                || ScoreOne == 50 && ScoreTwo == 40
-                || ScoreOne == 40 && ScoreTwo == 50)
+            if ((ScoreOne == 40 || ScoreOne == 50) && (ScoreTwo == 40)
+                || (ScoreTwo == 40 || ScoreTwo == 50) && (ScoreOne == 40))
             {
+                //For 40-40 or 40-50 or 50-40 return Deuce
                 result = "Deuce";
             }
-            else if (ScoreOne == 50)
+            else if(ScoreOne >= 50)
             {
-                if (ScoreTwo < 30)
+                if(ScoreTwo == 30 && ScoreOne != 60)
                 {
-                    result = "Server wins game";
-                }
-                else
-                {
+                    //Only for 50-30 return Advantage server
                     result = "Advantage server";
                 }
-            }
-            else if (ScoreTwo == 50)
-            {
-                if (ScoreOne < 30)
+                else
                 {
-                    result = "Server loses game";
+                    //Return win for 50-0 or 50-15 or 60-30
+                    result = "Server wins game";
+                }
+            }
+            else if(ScoreTwo >= 50)
+            {
+                if(ScoreOne == 30 && ScoreTwo != 60)
+                {
+                    //Only for 30-50 return Advantage non-server
+                    result = "Advantage non-server";
                 }
                 else
                 {
-                    result = "Advantage non-server";
+                    //Return loss for 0-50 or 15-50 or 30-60
+                    result = "Server loses game";
                 }
-            }
-            else if (ScoreOne == 60 && ScoreTwo == 30)
-            {
-                result = "Server wins game";
-            }
-            else if (ScoreOne == 30 && ScoreTwo == 60)
-            {
-                result = "Server loses game";
             }
             else
             {

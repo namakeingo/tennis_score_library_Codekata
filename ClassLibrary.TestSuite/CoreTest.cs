@@ -10,7 +10,7 @@ namespace ClassLibrary.TestSuite
         /// Succesfull start of game
         /// </summary>
         [Test]
-        public void GameStart_Score()
+        public void Score_0_0()
         {
             Core testObj = new Core();
 
@@ -18,10 +18,10 @@ namespace ClassLibrary.TestSuite
         }
 
         /// <summary>
-        /// Succesfull test for 1 point scored by PlayerOne
+        /// Succesfull test for 15-0
         /// </summary>
         [Test]
-        public void Player1_Score()
+        public void Score_15_0()
         {
             Core testObj = new Core();
 
@@ -31,10 +31,10 @@ namespace ClassLibrary.TestSuite
         }
 
         /// <summary>
-        /// Succesfull test for 1 point scored by PlayerTwo
+        /// Succesfull test for 0-15
         /// </summary>
         [Test]
-        public void Player2_Score()
+        public void Score_0_15()
         {
             Core testObj = new Core();
 
@@ -44,10 +44,52 @@ namespace ClassLibrary.TestSuite
         }
 
         /// <summary>
-        /// Succesfull test for 3 point scored by PlayerOne
+        /// Succesfull test for 30-0
         /// </summary>
         [Test]
-        public void Player1_Score_x3()
+        public void Score_30_0()
+        {
+            Core testObj = new Core();
+
+            testObj.PlayerOneScore();
+            testObj.PlayerOneScore();
+
+            Assert.True("30-0" == testObj.GetScore());
+        }
+
+        /// <summary>
+        /// Succesfull test for 15-15
+        /// </summary>
+        [Test]
+        public void Score_15_15()
+        {
+            Core testObj = new Core();
+
+            testObj.PlayerOneScore();
+            testObj.PlayerTwoScore();
+
+            Assert.True("15-15" == testObj.GetScore());
+        }
+
+        /// <summary>
+        /// Succesfull test for 0-30
+        /// </summary>
+        [Test]
+        public void Score_0_30()
+        {
+            Core testObj = new Core();
+
+            testObj.PlayerTwoScore();
+            testObj.PlayerTwoScore();
+
+            Assert.True("0-30" == testObj.GetScore());
+        }
+
+        /// <summary>
+        /// Succesfull test for 40-0
+        /// </summary>
+        [Test]
+        public void Score_40_0()
         {
             Core testObj = new Core();
 
@@ -59,10 +101,40 @@ namespace ClassLibrary.TestSuite
         }
 
         /// <summary>
-        /// Succesfull test for 3 point scored by PlayerTwo
+        /// Succesfull test for 30-15
         /// </summary>
         [Test]
-        public void Player2_Score_x3()
+        public void Score_30_15()
+        {
+            Core testObj = new Core();
+
+            testObj.PlayerOneScore();
+            testObj.PlayerOneScore();
+            testObj.PlayerTwoScore();
+
+            Assert.True("30-15" == testObj.GetScore());
+        }
+
+        /// <summary>
+        /// Succesfull test for 15-30
+        /// </summary>
+        [Test]
+        public void Score_15_30()
+        {
+            Core testObj = new Core();
+
+            testObj.PlayerTwoScore();
+            testObj.PlayerTwoScore();
+            testObj.PlayerOneScore();
+
+            Assert.True("15-30" == testObj.GetScore());
+        }
+
+        /// <summary>
+        /// Succesfull test for 0-40
+        /// </summary>
+        [Test]
+        public void Score_0_40()
         {
             Core testObj = new Core();
 
@@ -71,6 +143,88 @@ namespace ClassLibrary.TestSuite
             testObj.PlayerTwoScore();
 
             Assert.True("0-40" == testObj.GetScore());
+        }
+
+        /// <summary>
+        /// Succesfull test for 40-15
+        /// </summary>
+        [Test]
+        public void Score_40_15()
+        {
+            Core testObj = new Core();
+
+            testObj.PlayerTwoScore();
+            testObj.PlayerOneScore();
+            testObj.PlayerOneScore();
+            testObj.PlayerOneScore();
+
+            Assert.True("40-15" == testObj.GetScore());
+        }
+
+        /// <summary>
+        /// Succesfull test for 30-30
+        /// </summary>
+        [Test]
+        public void Score_30_30()
+        {
+            Core testObj = new Core();
+
+            testObj.PlayerTwoScore();
+            testObj.PlayerTwoScore();
+            testObj.PlayerOneScore();
+            testObj.PlayerOneScore();
+
+            Assert.True("30-30" == testObj.GetScore());
+        }
+
+        /// <summary>
+        /// Succesfull test for 15-40
+        /// </summary>
+        [Test]
+        public void Score_15_40()
+        {
+            Core testObj = new Core();
+
+            testObj.PlayerTwoScore();
+            testObj.PlayerTwoScore();
+            testObj.PlayerTwoScore();
+            testObj.PlayerOneScore();
+
+            Assert.True("15-40" == testObj.GetScore());
+        }
+
+        /// <summary>
+        /// Succesfull test for 40-30
+        /// </summary>
+        [Test]
+        public void Score_40_30()
+        {
+            Core testObj = new Core();
+
+            testObj.PlayerTwoScore();
+            testObj.PlayerTwoScore();
+            testObj.PlayerOneScore();
+            testObj.PlayerOneScore();
+            testObj.PlayerOneScore();
+
+            Assert.True("40-30" == testObj.GetScore());
+        }
+
+        /// <summary>
+        /// Succesfull test for 30-40
+        /// </summary>
+        [Test]
+        public void Score_30_40()
+        {
+            Core testObj = new Core();
+
+            testObj.PlayerTwoScore();
+            testObj.PlayerTwoScore();
+            testObj.PlayerTwoScore();
+            testObj.PlayerOneScore();
+            testObj.PlayerOneScore();
+
+            Assert.True("30-40" == testObj.GetScore());
         }
 
         /// <summary>
